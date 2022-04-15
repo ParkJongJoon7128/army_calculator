@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>군복무 계산기</title>
 </head>
+
 <body>
     <nav>
         <h1><a href="index.html">army-calculator</a></h1>
         <button>계산기</button>
     </nav>
-    <section>
-       <h1>군복무 계산기</h1> 
-    </section>
+    <div>
+        <h1 class="titleText">군복무 계산기</h1>
+        <h2>복무 형태를 선택 후, 입대예정일자를 입력해주세요.</h2>
+        <section>
+            <!--육군 18 공군 21 해군 20 해병대 18 해양의무경찰 20 의무경찰 18 의무소방원 20 사회복무요원 21  -->
+            <form class="groupForm">
+                <button class="group18" type="button" onclick="groupSelected('육군', 18)"
+                    style="color:rgb(70, 193, 68);">육군</button>
+                <button class="group20" type="button" onclick="groupSelected('해군', 20)"
+                    style="color:rgb(64,162,191);">해군</button>
+                <button class="group21" type="button" onclick="groupSelected('공군', 21)"
+                    style="color:rgb(74, 66, 252);">공군</button>
+                <button class="group18" type="button" onclick="groupSelected('해병대', 18)" style="color:red;">해병대</button>
+                <button class="group20" type="button" onclick="groupSelected('사회복무요원', 20)">사회복무요원</button>
+                <button class="group18" type="button" onclick="groupSelected('의무경찰', 18)">의무경찰</button>
+                <button class="group20" type="button" onclick="groupSelected('의무소방원', 20)">의무소방원</button>
+                <button class="group21" type="button" onclick="groupSelected('해양의무경찰', 21)">해양의무경찰</button>
+            </form>
+            <h3 id="showGroup" class="hidden"></h3>
+        </section>
+    </div>
+
+    <div class="inputForm">
+        <h3><label for="inputYear">입대일 : </label></h3>
+        <input type="number" id='inputYear' class="date" min="2000" max="2100" value="2001" required>
+        <input type="number" id='inputMonth' class="date" min="01" max="12" value="01" required>
+        <input type="number" id='inputDay' class="date" min="01" max="31" value="16" required>
+        <button id="dayinputButton" onclick="calc()">GO</button>
+        <button id="dayResetButton" onclick="today();calc();">Today</button>
+    </div>
+
+    <div id="dischargeDay"> </div>
+    <div id="percentLeft"> </div>
+    <div id="salaryLeft"> </div>
+    </main>
+    <p id="warning">*계산결과는 오차가 있을 수 있으니 자세한 사항은 <a id="mma" href="https://www.mma.go.kr/index.do">병무청</a>에서 확인하시기 바랍니다.
+    </p>
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
 </body>
+
 </html>
