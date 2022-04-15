@@ -6,7 +6,7 @@ function groupSelected(group, month) {
     result_2.innerHTML = "";
     result_3.innerHTML = "";
 
-    document.querySelector(".subtitle").innerText = "입대(예정)일자를 입력해주세요 :)";
+    // document.querySelector(".subtitle").innerText = "입대(예정)일자를 입력해주세요 :)";
     const pShowGroup = document.querySelector("#showGroup");
     pShowGroup.innerHTML = `${group}의 복무 개월수 : <span id="armyMonth">${month}</span>개월`;
     pShowGroup.classList.remove("hidden");
